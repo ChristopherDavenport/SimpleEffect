@@ -11,7 +11,7 @@ class SyncLaws extends CatsAsyncSuite {
   import io.chrisdavenport.simpleeffect.cats.syncio._
   import SyncLaws.SyncIOScalaCheckInstances._
 
-  checkAllAsync("Sync[SyncIO]", implicit e => SyncTests[SyncIO].sync[Int, Int, Int])
+  checkAllAsync("Sync[SyncIO]", _ => SyncTests[SyncIO].sync[Int, Int, Int])
 
 
 }

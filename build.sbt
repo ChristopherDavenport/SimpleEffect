@@ -14,13 +14,11 @@ lazy val cats = project.in(file("cats"))
     name := "simple-effect-cats"
   )
 
-val catsV = "1.1.0"
-val catsEffectV = "1.0.0-RC2"
+val catsV = "1.6.0"
+val catsEffectV = "1.2.0"
 
 val specs2V = "4.2.0"
-val disciplineV = "0.8"
-val scShapelessV = "1.1.6"
-
+val disciplineV = "0.11.0"
 
 lazy val contributors = Seq(
   "ChristopherDavenport" -> "Christopher Davenport"
@@ -29,11 +27,11 @@ lazy val contributors = Seq(
 lazy val commonSettings = Seq(
   organization := "io.chrisdavenport",
 
-  scalaVersion := "2.12.6",
+  scalaVersion := "2.12.8",
   crossScalaVersions := Seq(scalaVersion.value, "2.11.12"),
 
-  addCompilerPlugin("org.spire-math" % "kind-projector" % "0.9.7" cross CrossVersion.binary),
-  addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.2.4"),
+  addCompilerPlugin("org.spire-math" % "kind-projector" % "0.9.9" cross CrossVersion.binary),
+  addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.0-M4"),
 
   libraryDependencies ++= Seq(
     "org.typelevel"               %% "cats-effect-laws"           % catsEffectV   % Test,
@@ -43,7 +41,6 @@ lazy val commonSettings = Seq(
 
 lazy val catsSettings = Seq(
   libraryDependencies ++= Seq(
-    // "org.typelevel"               %% "cats-core"                  % catsV,
     "org.typelevel"               %% "cats-effect"                % catsEffectV
   )
 )
